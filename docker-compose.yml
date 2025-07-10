@@ -5,13 +5,13 @@ services:
     container_name: Employee-application
     build: ./Backend
     ports:
-      - "3404:3404"
+      - "3696:3696"
     depends_on:
       - postgres
     environment:
       - PGHOST=postgres
       - PGUSER=postgres
-      - PGPASSWORD=admin123
+      - PGPASSWORD=admin321
       - PGDATABASE=job_applications_db
       - PGPORT=5432
     volumes:
@@ -23,7 +23,7 @@ services:
     container_name: Employee-application01
     build: ./Employee-application
     ports:
-      - "8306:80"
+      - "8078:80"
     depends_on:
       - backend
     networks:
@@ -33,7 +33,7 @@ services:
     container_name: HR-application
     build: ./HR-application
     ports:
-      - "8307:80"
+      - "8079:80"
     depends_on:
       - backend
     networks:
@@ -43,7 +43,7 @@ services:
     container_name: View-offer
     build: ./View-offer
     ports:
-      - "8308:80"
+      - "8080:80"
     depends_on:
       - backend
     networks:
@@ -56,7 +56,7 @@ services:
       - "5116:5432"
     environment:
       POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: admin123
+      POSTGRES_PASSWORD: admin321
       POSTGRES_DB: job_applications_db
     volumes:
       - postgres_data:/var/lib/postgresql/data

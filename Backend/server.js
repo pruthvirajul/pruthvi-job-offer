@@ -7,7 +7,7 @@ const fs = require('fs');
 const crypto = require('crypto'); // Added for generating referral ID
 
 const app = express();
-const port = 3404;
+const port = 3696;
 
 // Middleware
 app.use(cors());
@@ -19,7 +19,7 @@ const pool = new Pool({
     user: 'postgres',
     host: 'postgres',
     database: 'job_applications_db',
-    password: 'admin123',
+    password: 'admin321',
     port: 5432,
 });
 
@@ -323,5 +323,5 @@ app.delete('/api/applications', async (req, res) => {
 
 // Start server
 app.listen(port, () => {
-    console.log(`Server running at http://3.88.203.125:${port}`);
+    console.log(`Server running at http://13.60.25.21:${port}`);
 });
